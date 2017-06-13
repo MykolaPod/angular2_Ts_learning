@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {RaceService} from '../services/race-service';
 
 @Component({
   selector: 'app-races',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./races.component.css']
 })
 export class RacesComponent implements OnInit {
-
-  constructor() { }
+  races: any = [];
+  constructor(private _raceService: RaceService) {  }
 
   ngOnInit() {
   }
 
+  refreshRaces() {
+    this.races = this._raceService.GetRaces();
+  }
 }

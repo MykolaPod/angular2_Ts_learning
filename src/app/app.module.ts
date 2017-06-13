@@ -6,19 +6,22 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { PonyComponent } from './pony/pony.component';
 import { RacesComponent } from './races/races.component';
+import { PoniesComponent } from './ponies/ponies.component';
+import { RaceService } from './services/race-service';
 
 @NgModule({
   declarations: [
     AppComponent,
     PonyComponent,
-    RacesComponent
+    RacesComponent,
+    PoniesComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [RaceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

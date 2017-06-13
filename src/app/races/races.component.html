@@ -1,1 +1,16 @@
 <h2>Races</h2>
+<button (click)="refreshRaces()">Click on me!</button>
+<p>{{races.length}} races</p>
+
+<div *ngIf="races.length > 0">
+  <h2>Races list</h2>
+  <ul>
+    <div *ngFor="let race of races">
+      <li>
+        {{race.name}}
+      </li>
+      <app-ponies></app-ponies>
+    </div>
+  </ul>
+</div>
+
